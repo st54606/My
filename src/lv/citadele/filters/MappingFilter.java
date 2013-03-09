@@ -19,6 +19,7 @@ import lv.citadele.controllers.IController;
 import lv.citadele.mapping.UrlMapping;
 import lv.citadele.modelCreater.FormModelCreater;
 import lv.citadele.modelCreater.ModelCreater;
+import lv.citadele.models.FormModel;
 import lv.citadele.models.IModel;
 
 
@@ -32,12 +33,13 @@ public class MappingFilter implements Filter {
 		
 		//Form mapping
 		UrlMapping formPage = new UrlMapping();
-		formPage.setUrl("/jsp/successful.jsp");
+		formPage.setUrl("Citadele_Form/jsp/PaymentForm.jsp");
 		formPage.setModelCreater(new FormModelCreater());
 		formPage.setController(new FormController());
-		formPage.setJsp("/jsp/sucessful.jsp");
+		formPage.setJsp("/Citadele_Form/jsp/PaymentForm.jsp");
 
 		mapping.put(formPage.getUrl(), formPage);
+		
     }
 
 	public void destroy() {
@@ -48,17 +50,25 @@ public class MappingFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		
-		ModelCreater modelCreater = mapping.get("formPage").getModelCreater();
+		/*if(req.getRequestURI().matches(".*(css|jpg|png|gif|js)")){*/
+			UrlMapping formPage = new UrlMapping();
+		ModelCreater modelCreater = mapping.get("Citadele_Form/jsp/PaymentForm.jsp").getModelCreater();
 		IModel model= modelCreater.createModel(req);
-			IController controller  = mapping.get("formPage").getController();
-			controller.execute(model, req);
-			
+		IController controller  = mapping.get("Citadele_Form/jsp/PaymentForm.jsp").getController();
+		controller.execute((FormModel)model, req);
+		
+		System.out.println("from mapping ");
+		//resp.sendRedirect("Citadele_Form/jsp/PaymentForm.jsp");
+		//}
+		/*else
+		{*/
 		
 		chain.doFilter(request, response);
 		
+		//}
 	}
 
 	/**

@@ -1,3 +1,5 @@
+<%@page import="lv.citadele.models.FormModel"%>
+<%@page import="lv.citadele.models.IModel"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@page import="lv.citadele.domain.FormFields"%>
@@ -8,12 +10,9 @@
 <title>successful</title>
 </head>
 <body>
-<% 
-
-FormFields ff = (FormFields)session.getAttribute("form");
-
-String push = ff.getRemitterName();
-System.out.println(push);
+<% HttpSession sessions = request.getSession();
+FormModel model = (FormModel)session.getAttribute("model");
+System.out.print(model.getRemitterName() + "successful");
 %>
 </body>
 </html>

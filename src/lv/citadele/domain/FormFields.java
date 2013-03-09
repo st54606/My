@@ -18,6 +18,7 @@ public class FormFields {
 	private String codeOfExternalPayment;
 	private String paymentDetails;
 	private String signature;
+	private String customerNumber;
 	
 	public FormFields (){
 		customerNumber="";
@@ -40,7 +41,7 @@ public class FormFields {
 		signature="";
 	}
 
-	private String customerNumber;
+	
 	public String getCustomerNumber() {
 		return customerNumber;
 	}

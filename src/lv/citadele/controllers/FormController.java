@@ -12,7 +12,7 @@ public class FormController  extends ControllerBase{
 	public void execute(IModel model, HttpServletRequest request) {
 		FormModel modelf = ((FormModel)model);
 		HttpSession session = request.getSession();
-		
+		System.out.println(modelf.getRemitterName()+ "controller");
 		session.setAttribute("model", modelf);
 	}
 

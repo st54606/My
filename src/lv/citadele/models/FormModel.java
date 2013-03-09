@@ -1,7 +1,32 @@
 package lv.citadele.models;
 
-public class FormModel implements IModel{
+public class FormModel implements IModel {
+	
 	private String formdate;
+	private String remitterName;
+	private String beneficiaryName;
+	private String persCode;
+	private String accountNr;
+	private String residenceCountry;
+	private String beneficiaryBank;
+	private String bankCode;
+	private String currency;
+	private String bankFee;
+	private String amountInWords;
+	private String paymentType;
+	private String exchangeRate;
+	private String valueDate;
+	private String codeOfExternalPayment;
+	private String paymentDetails;
+	private String signature;
+	private String customerNumber;
+	
+	public String getCustomerNumber() {
+		return customerNumber;
+	}
+	public void setCustomerNumber(String customerNumber) {
+		this.customerNumber = customerNumber;
+	}
 	public String getFormdate() {
 		return formdate;
 	}
@@ -104,22 +129,6 @@ public class FormModel implements IModel{
 	public void setSignature(String signature) {
 		this.signature = signature;
 	}
-	private String remitterName;
-	private String beneficiaryName;
-	private String persCode;
-	private String accountNr;
-	private String residenceCountry;
-	private String beneficiaryBank;
-	private String bankCode;
-	private String currency;
-	private String bankFee;
-	private String amountInWords;
-	private String paymentType;
-	private String exchangeRate;
-	private String valueDate;
-	private String codeOfExternalPayment;
-	private String paymentDetails;
-	private String signature;
 	
 
 }
