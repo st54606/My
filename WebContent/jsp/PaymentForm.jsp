@@ -11,8 +11,9 @@
 <title>Payment Form</title>
 </head>
 <body>
-
 <!-- Page header -->
+<center>
+<div id ="container">
 <table>
 <tr>
 <td id ="logo" >
@@ -25,6 +26,7 @@
 </td>
 
 <!-- Page header -->
+
 
 <!-- First Table -->
 <form ><table>
@@ -49,7 +51,7 @@
 Vards, uzvards / Uznemuma nosaukums<br>
 <h6>Name, surname / Company name</h6>
 <form>
-Имя, Фамилия/ Название фирмы <input type="text" size= "50" name= "remitterName" value="">
+Имя, Фамилия/ Название фирмы <input type="text" size= "50" name= "remitterName" value="remitterName">
 </form>
 </small>
 </td>
@@ -237,9 +239,8 @@ Name, surname / Company name<br>
 </td>
 </table>
 </form>
-<%System.out.println(session.getId().hashCode()); 
-FormFields ff = new FormFields();
-
-%>
+<% %>
+</div>
+</center>
 </body>
 </html>

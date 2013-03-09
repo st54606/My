@@ -9,8 +9,10 @@
 </head>
 <body>
 <% 
-FormFields ff = new FormFields();
-String push =request.getParameter("remitterName");
+
+FormFields ff = (FormFields)session.getAttribute("form");
+
+String push = ff.getRemitterName();
 System.out.println(push);
 %>
 </body>
