@@ -1,6 +1,8 @@
 <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%> --%>
     <%@page pageEncoding="UTF-8" %>
+    <%@page import="lv.citadele.domain.FormFields"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +11,7 @@
 <title>Payment Form</title>
 </head>
 <body>
+
 <!-- Page header -->
 <table>
 <tr>
@@ -27,7 +30,7 @@
 <form ><table>
 <tr><br>
 <td align = "left"><h6>AS „Citadele banka”, Reg. nr. 40103303559</h6> </td>
-<td align="right">FKl. num. / Cust. num <input type="text" name="Cust_number" value =""></td></tr>
+<td align="right">FKl. num. / Cust. num <input type="text" name="cust_number" value =""></td></tr>
 <tr>
 <td align = "left">Republikas laukums 2A, Riga, LV-1010, Latvija</td>
 <td align="right">Datums / Date<input type="text" name="formDate"/></td>
@@ -46,7 +49,7 @@
 Vards, uzvards / Uznemuma nosaukums<br>
 <h6>Name, surname / Company name</h6>
 <form>
-Имя, Фамилия/ Название фирмы <input type="text" size= "50" name= "remitter" value="">
+Имя, Фамилия/ Название фирмы <input type="text" size= "50" name= "remitterName" value="">
 </form>
 </small>
 </td>
@@ -62,7 +65,7 @@ Vards, uzvards / Uznemuma nosaukums<br>
 Vards, uzvards / Uznemuma nosaukums<br>
 Name, surname / Company name<br>
 <form>
-Имя, Фамилия/ Название фирмы  <input type="text" size= "50" name= "Beneficiary" value="">
+Имя, Фамилия/ Название фирмы  <input type="text" size= "50" name= "beneficiaryName" value="">
 </form>
 <td colspan = "3" valign = "top" bgcolor = "#fbfbfb">
 </small>
@@ -75,7 +78,7 @@ Personas kods / Reg. Nr.<br>
 Personal ID number / Reg. No<br>
 <form>
 Перс. код / Регистрационный №
-<input type="text" size= "5" name= "PersonalId1half" value=""> - <input type ="text" size="5" name="PersonalId2half" value ="">
+<input type="text" size= "5" name= "personalId1half" value=""> - <input type ="text" size="5" name="personalId2half" value ="">
 / <input type ="text" size="11" name="RegNr" value ="">
 </form>
 <td colspan = "3" valign = "top" bgcolor = "#fbfbfb">
@@ -88,7 +91,7 @@ Personal ID number / Reg. No<br>
 Konta Nr.<br>
 Account No<br>
 <form>
-№ счета  <input type="text" size= "50" name= "AccountNr" value="">
+№ счета  <input type="text" size= "50" name= "accountNr" value="">
 </form>
 </td>
 <td colspan = "3" align ="left" valign = "top" bgcolor = "#fbfbfb">
@@ -96,7 +99,7 @@ Account No<br>
 Rezidences valsts<br>
 Residence country<br>
 <form>
-Страна резиденции <input type="text" size= "25" name= "RezidenceCountry" value="">
+Страна резиденции <input type="text" size= "25" name= "residenceCountry" value="">
 </form>
 </small>
 </td>
@@ -107,7 +110,7 @@ Residence country<br>
 Saņēmējbanka<br>
 Beneficiary bank<br>
 <form>
-Банк получателя  <input type="text" size= "25" name= "BeneficiaryBank" value="">
+Банк получателя  <input type="text" size= "25" name= "beneficiaryBank" value="">
 </form>
 </small>
 </td>
@@ -116,7 +119,7 @@ Beneficiary bank<br>
 Bankas kods<br>
 Bank code<br>
 <form>
-Банковский код  <input type="text" size= "25" name= "BankCode" value="">
+Банковский код  <input type="text" size= "25" name= "bankCode" value="">
 </form>
 </small>
 </td>
@@ -130,7 +133,7 @@ Bank code<br>
 Summa cipariem un valuta<br>
 Amount in figures and currency<br>
 <form>
-Сумма цифрами и валюта <input type="text" size= "15" name= "remitter" value="">
+Сумма цифрами и валюта <input type="text" size= "15" name= "currency" value="">
 </form>
 </small>
 </td>
@@ -139,7 +142,7 @@ Amount in figures and currency<br>
 Bankas komisija<br>
 Bank fee<br>
 <form>
-Коммимия банка  <input type="text" size= "15" name= "BankFee" value="" align ="left">
+Коммимия банка  <input type="text" size= "15" name= "bankFee" value="" align ="left">
 </form>
 </small>
 </td>
@@ -150,7 +153,7 @@ Bank fee<br>
 Summa vārdiem<br>
 Amount in words<br>
 <form>
-Сумма прописью  <input type="text" size= "25" name= "AmountWords" value="">
+Сумма прописью  <input type="text" size= "25" name= "amountInWords" value="">
 </form>
 </small>
 </td>
@@ -163,7 +166,7 @@ Amount in words<br>
 Maksajuma veids<br>
 Payment type<br>
 <form>
-Вид платежа  <input type="text" size= "50" name= "PaymentType" value="">
+Вид платежа  <input type="text" size= "50" name= "paymentType" value="">
 </form>
 </td>
 <td colspan = "3" align ="left" valign = "top" bgcolor = "#fbfbfb">
@@ -171,7 +174,7 @@ Payment type<br>
 Maiņas kurss<br>
 Exchange rate<br>
 <form>
-Обменный курс <input type="text" size= "25" name= "ExchangeRate" value="">
+Обменный курс <input type="text" size= "25" name= "exchangeRate" value="">
 </form>
 </small>
 </td>
@@ -182,7 +185,7 @@ Exchange rate<br>
 Valutešanas datums<br>
 Value date<br>
 <form>
-Дата валютирования  <input type="text" size= "15" name= "ValueDate" value="">
+Дата валютирования  <input type="text" size= "15" name= "valueDate" value="">
 </form>
 </td>
 <td colspan = "3" align ="left" valign = "top" bgcolor = "#fbfbfb">
@@ -190,7 +193,7 @@ Value date<br>
 Arējā maksājuma kods<br>
 Code of external payment<br>
 <form>
-Код зарубежного платежа <input type="text" size= "15" name= "CodeOfExternalPayment" value="">
+Код зарубежного платежа <input type="text" size= "15" name= "codeOfExternalPayment" value="">
 </form>
 </small>
 </td>
@@ -216,13 +219,27 @@ Payment details<br>
 Vards, uzvards / Uznemuma nosaukums<br>
 Name, surname / Company name<br>
 <form>
-Имя, Фамилия/ Название фирмы  <input type="text" size= "50" name= "Signature" value="">
+Имя, Фамилия/ Название фирмы  <input type="text" size= "50" name= "signature" value="">
 </form>
 <td colspan = "3" valign = "top" bgcolor = "#fbfbfb">
 </small>
 </td>
 </tr>
 </table>
-</body>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<form name="input" action="successful.jsp" method="post">
+<input type="image" src="../img/button_nosutit.gif" name="submit"  />
+</form>
+</td>
+</table>
+</form>
+<%System.out.println(session.getId().hashCode()); 
+FormFields ff = new FormFields();
 
+%>
+</body>
 </html>
