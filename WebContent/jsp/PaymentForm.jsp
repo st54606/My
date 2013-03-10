@@ -8,6 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../css/citadele-all.css" media="screen, projection">
+<link rel="shortcut icon" href="http://www.citadele.lv/favicon.ico" type="image/x-icon">
 <title>Payment Form</title>
 </head>
 <body>
@@ -225,19 +226,20 @@ Name, surname / Company name<br>
 </td>
 </tr>
 </table>
+
+<br>
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
-
 <input type="image" src="../img/button_nosutit.gif" name="submit"  />
 </form>
 </td>
 </table>
 </form>
-<% %>
 </div>
 
+<br>
 </body>
 </html>
