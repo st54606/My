@@ -17,7 +17,7 @@
 <table>
 <tr>
 <td id ="logo" >
-<img src="../img/citadele-logo.gif" alt= "Citadele banka" widht ="164" "height="72" class="padding-logo">
+<img src="../img/citadele-logo.gif" alt= "Citadele banka" widht ="164" "height="100" class="padding-logo">
 </td>
 <td  align ="center" valign="middle"><br>
 <h1><b>MAKSĀJUMA UZDEVUMS</b></h1>
@@ -32,10 +32,10 @@
 <form name="input" action="successful.jsp" method="post"><table>
 <tr><br>
 <td align = "left"><h6>AS „Citadele banka”, Reg. nr. 40103303559</h6> </td>
-<td align="right">FKl. num. / Cust. num <input type="text" name="cust_number" value =""></td></tr>
+<td align="right">FKl. num. / Cust. num <input type="text" name="cust_number" value ="cust_number"></td></tr>
 <tr>
 <td align = "left">Republikas laukums 2A, Riga, LV-1010, Latvija</td>
-<td align="right">Datums / Date<input type="text" name="formDate"/></td>
+<td align="right">Datums / Date<input type="text" name="formDate" value = "01.01.01"/></td>
 </tr>
 </table>
 </tr> 
@@ -67,7 +67,7 @@ Vards, uzvards / Uznemuma nosaukums<br>
 Vards, uzvards / Uznemuma nosaukums<br>
 Name, surname / Company name<br>
 
-Имя, Фамилия/ Название фирмы  <input type="text" size= "50" name= "beneficiaryName" value="">
+Имя, Фамилия/ Название фирмы  <input type="text" size= "50" name= "beneficiaryName" value="beneficiaryName">
 
 <td colspan = "3" valign = "top" bgcolor = "#fbfbfb">
 </small>
@@ -81,8 +81,7 @@ Personal ID number / Reg. No<br>
 
 Перс. код / Регистрационный №
 <input type="text" size= "5" name= "personalId1half" value=""> - <input type ="text" size="5" name="personalId2half" value ="">
-/ <input type ="text" size="11" name="RegNr" value ="">
-<
+ <input type ="text" size="11" name="RegNr" value ="">
 <td colspan = "3" valign = "top" bgcolor = "#fbfbfb">
 </small>
 </td>
@@ -92,9 +91,7 @@ Personal ID number / Reg. No<br>
 <small>
 Konta Nr.<br>
 Account No<br>
-<
 № счета  <input type="text" size= "50" name= "accountNr" value="">
-
 </td>
 <td colspan = "3" align ="left" valign = "top" bgcolor = "#fbfbfb">
 <small>

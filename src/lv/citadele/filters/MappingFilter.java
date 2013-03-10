@@ -61,10 +61,6 @@ public class MappingFilter implements Filter {
 		controller.execute((FormModel)model, req);
 		
 		System.out.println("from mapping ");
-		//resp.sendRedirect("Citadele_Form/jsp/PaymentForm.jsp");
-		//}
-		/*else
-		{*/
 		
 		chain.doFilter(request, response);
 		
