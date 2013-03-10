@@ -53,15 +53,16 @@ public class MappingFilter implements Filter {
 	
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
+		if( req.getMethod().equals("post")){
 		/*if(req.getRequestURI().matches(".*(css|jpg|png|gif|js)")){*/
-			UrlMapping formPage = new UrlMapping();
+		UrlMapping formPage = new UrlMapping();
 		ModelCreater modelCreater = mapping.get("Citadele_Form/jsp/PaymentForm.jsp").getModelCreater();
 		IModel model= modelCreater.createModel(req);
 		IController controller  = mapping.get("Citadele_Form/jsp/PaymentForm.jsp").getController();
 		controller.execute((FormModel)model, req);
 		
 		System.out.println("from mapping ");
-		
+		}
 		chain.doFilter(request, response);
 		
 		//}

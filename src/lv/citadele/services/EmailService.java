@@ -16,9 +16,8 @@ public class EmailService implements EmailServiceInterface {
 	public void sendEmail(IModel model) {
 		FormModel modelf = (FormModel) model;
 
-		HtmlEmail email = new HtmlEmail();
-
 		try {
+			HtmlEmail email = new HtmlEmail();
 			email.setHostName("smtp.googlemail.com");
 			email.addTo("tofancheg@gmail.com", "Client");
 			email.setSmtpPort(465);
